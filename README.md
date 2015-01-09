@@ -49,6 +49,8 @@ Structure
 SVG Files
 ---------
 
+**This files are a very good start point for you create your stickers.**
+
 -   [badge.svg](badge.svg)
 
     Badge that you can use in the footnote of your website.
@@ -61,6 +63,9 @@ SVG Files
 -   [icon.svg](icon.svg)
 
     The icon of the OKF Open Science Working Group.
+-   [icon-sticker.svg](icon-sticker.svg)
+
+    The icon to be print as 5x5 stickers.
 -   [icon-black.svg](icon-black.svg)
 
     The black version of the icon.

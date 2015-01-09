@@ -1,12 +1,15 @@
 #!/bin/bash
 
+INPUT_OPTIONS="-background none"
+OUTPUT_OPTIONS=""
+
 # Convert images from svg directory into the required format.
 function tobitmap () {
     mkdir -p $1
     SVG_FILES=$(find svg -name '*.svg' -type f;)
     for file in ${SVG_FILES};
     do
-        convert -density 300 ${file} ${file//svg/$1}
+        convert -density 300 ${INPUT_OPTIONS} ${file} ${OUTPUT_OPTIONS} ${file//svg/$1}
     done
 }
 

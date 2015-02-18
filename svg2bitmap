@@ -1,0 +1,25 @@
+#!/bin/bash
+
+INPUT_OPTIONS="-background none"
+OUTPUT_OPTIONS=""
+
+# Convert images from svg directory into the required format.
+function tobitmap () {
+    mkdir -p $1
+    SVG_FILES=$(find svg -name '*.svg' -type f;)
+    for file in ${SVG_FILES};
+    do
+        convert -density 300 ${INPUT_OPTIONS} ${file} ${OUTPUT_OPTIONS} ${file//svg/$1}
+    done
+}
+
+if test $1 = "png" -o $1 = "jpg" -o $1 = "pdf" -o $1 = "eps";
+then
+    tobitmap $1
+else
+    echo "No supported format."
+    echo ""
+    echo "Usage:"
+    echo ""
+    echo "    $ ./svg2bitmap [png|jpg|pdf|eps]"
+fi
